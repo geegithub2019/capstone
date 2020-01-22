@@ -1,5 +1,5 @@
 pipeline {  environment {
-    registry = "docker_hub_account/repository_name"
+    registry = "geepee2017/dockercap"
     registryCredential = 'dockerhub'
   }  agent any  stages {
     stage('Building image') {
