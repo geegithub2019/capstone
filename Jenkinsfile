@@ -1,47 +1,37 @@
-pipeline {
-    agent any
-    options {
-        timestamps()
+pipeline {  
+
+  environment {
+       registry = "geepee2017/dockercap"
+       registryCredential = 'dockerhub'
+       dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+      }
     }
-    environment {
-        IMAGE = "custom-tutum"
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
     }
-    stages {
-        stage('prep') {
-            steps {
-                script {
-                    env.GIT_HASH = sh(
-                        script: "git show --oneline | head -1 | cut -d' ' -f1",
-                        returnStdout: true
-                    ).trim()
-                }
-            }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
         }
-        stage('build') {
-            steps {
-                script {
-                    image = docker.build("${IMAGE}")
-                    println "Newly generated image, " + image.id
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                script {
-                    // https://hub.docker.com/r/tutum/hello-world/
-                    def container = tutum_image.run('-p 80')
-                    println image.id + " container is running at host port, " + container.port(80)
-                    image.tag("${GIT_HASH}")
-                    if ( "${env.BRANCH_NAME}" == "master" ) {
-                        image.tag("LATEST")
-                    }
-                }
-            }
-        }
+      }
     }
-    post {
-        always {
-            cleanWs()
-        }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
     }
+  }
 }
