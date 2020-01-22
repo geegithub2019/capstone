@@ -1,5 +1,5 @@
 pipeline {  environment {
-    registry = "geepee2017/dockercap"
+    registry = "geepee2017/dockercap:latest"
     registryCredential = 'dockerhub'
   }
   agent any
