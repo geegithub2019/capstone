@@ -2,19 +2,30 @@ pipeline {  environment {
     registry = "geepee2017/dockercap"
     registryCredential = 'dockerhub'
   }
-  agent any
-  stages {
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/microservices-demo/catalogue.git'
-      }
-    }
-    stage('Building image') {
-      steps{
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
+    agent { label 'dockerserver' } // if you don't have other steps, 'any' agent works
+    stages {
+        stage('Back-end') {
+            agent {
+                docker {
+                  label 'dockerserver'  // both label and image
+                  image 'maven:3-alpine'
+                }
+            }
+            steps {
+                sh 'mvn --version'
+            }
         }
-      }
+        stage('Front-end') {
+            agent {
+              docker {
+                label 'dockerserver'  // both label and image
+                image 'node:7-alpine' 
+              }
+            }
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-  }
+}
 }
