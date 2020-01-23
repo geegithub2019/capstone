@@ -9,12 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sudo docker build -t mynginximage2 .'
+        sh 'docker build -t mynginximage2 .'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'sudo docker run --name mynginx4 -P -d mynginximage1'
+        sh 'docker run --name mynginx4 -P -d mynginximage1'
       }
     }
     stage('Building image') {
@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Remove Unused docker image') {
       steps{
-        sh "sudo docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   }
