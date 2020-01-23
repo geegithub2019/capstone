@@ -7,11 +7,6 @@ pipeline {
   }
   agent any
   stages {
-    stage('Clear') {
-      steps {
-        sh 'docker system prune --all --force --volume'
-      }
-    }
     stage('Build') {
       steps {
         sh 'docker build -t mynginximage2 .'
