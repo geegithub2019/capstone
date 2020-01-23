@@ -5,7 +5,9 @@ pipeline {
        registryCredential = 'dockerhub'
        dockerImage = ''
   }
-  agent any
+  agent {
+        docker { image 'node:7-alpine' }
+    }
   stages {
     stage('Build') {
       steps {
