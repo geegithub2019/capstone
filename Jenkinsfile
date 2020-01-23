@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mynginximage1 .'
+        sh 'docker build -t mynginximage2 .'
       }
     }
     stage('Deploy') {
