@@ -6,21 +6,15 @@ pipeline {
        dockerImage = ''
   }
   agent any
-  tools {nodejs "node" }
   stages {
-    stage('Cloning Git') {
+    stage('Build') {
       steps {
-        git 'https://github.com/gustavoapolinario/node-todo-frontend'
+        sh 'docker build -t mynginximage1 .'
       }
     }
-    stage('Build') {
-       steps {
-         sh 'npm install'
-       }
-    }
-    stage('Test') {
+    stage('Deploy') {
       steps {
-        sh 'npm test'
+        sh 'docker run --name mynginx4 -P -d mynginximage1'
       }
     }
     stage('Building image') {
