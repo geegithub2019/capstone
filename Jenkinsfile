@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker run --name mynginx4 -P -d mynginximage1'
+        sh 'docker run --name mynginx4 -P -d mynginximage2'
       }
     }
     stage('Building image') {
