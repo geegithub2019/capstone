@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"green",
+      "labels":{
+         "app":"green"
+      }
+   },
+   "spec":{
+      "replicas":4,
+      "selector":{
+         "app":"green"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"green"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"green",
+                  "image":"geepee2017/greenimage",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":80
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

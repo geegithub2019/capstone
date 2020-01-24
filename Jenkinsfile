@@ -9,12 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mynginximage2 .'
+        sh 'docker build -t mynginximagetest ./green'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'docker run --name mynginx4 -P -d mynginximage2'
+        sh 'docker run --name mynginx5 -P -d mynginximagetest'
       }
     }
     stage('Building image') {
