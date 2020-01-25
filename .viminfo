@@ -14,10 +14,10 @@
 $
 
 # Command Line History (newest to oldest):
+:q!
+|2,0,1579910971,,"q!"
 :wq!
 |2,0,1579908842,,"wq!"
-:q!
-|2,0,1579908177,,"q!"
 
 # Search String History (newest to oldest):
 ? @$
@@ -38,36 +38,50 @@ $
 |3,0,36,0,1,0,1579907310,"1"
 
 # File marks:
-'0  2  10  ~/.gitignore
-|4,48,2,10,1579908842,"~/.gitignore"
-'1  2  10  ~/.git/.gitignore
-|4,49,2,10,1579908501,"~/.git/.gitignore"
-'2  1  0  ~/.git/config
-|4,50,1,0,1579908177,"~/.git/config"
-'3  21  7  ~/.git
-|4,51,21,7,1579908157,"~/.git"
-'4  8  0  ~/.git
-|4,52,8,0,1579908068,"~/.git"
-'5  17  60  ~/Jenkinsfile
-|4,53,17,60,1579907804,"~/Jenkinsfile"
-'6  18  22  ~/green/upload_docker.sh
-|4,54,18,22,1579907638,"~/green/upload_docker.sh"
-'7  15  21  ~/green/run_docker.sh
-|4,55,15,21,1579907566,"~/green/run_docker.sh"
-'8  25  37  ~/green/green-controller.json
-|4,56,25,37,1579907531,"~/green/green-controller.json"
-'9  1  0  ~/green/Dockerfile
-|4,57,1,0,1579907493,"~/green/Dockerfile"
+'0  1  0  ~/.git/config
+|4,48,1,0,1579910971,"~/.git/config"
+'1  2  10  ~/.gitignore
+|4,49,2,10,1579908842,"~/.gitignore"
+'2  2  10  ~/.git/.gitignore
+|4,50,2,10,1579908501,"~/.git/.gitignore"
+'3  1  0  ~/.git/config
+|4,51,1,0,1579908177,"~/.git/config"
+'4  21  7  ~/.git
+|4,52,21,7,1579908157,"~/.git"
+'5  8  0  ~/.git
+|4,53,8,0,1579908068,"~/.git"
+'6  17  60  ~/Jenkinsfile
+|4,54,17,60,1579907804,"~/Jenkinsfile"
+'7  18  22  ~/green/upload_docker.sh
+|4,55,18,22,1579907638,"~/green/upload_docker.sh"
+'8  15  21  ~/green/run_docker.sh
+|4,56,15,21,1579907566,"~/green/run_docker.sh"
+'9  25  37  ~/green/green-controller.json
+|4,57,25,37,1579907531,"~/green/green-controller.json"
 
 # Jumplist (newest first):
+-'  1  0  ~/.git/config
+|4,39,1,0,1579910971,"~/.git/config"
 -'  2  10  ~/.gitignore
 |4,39,2,10,1579908842,"~/.gitignore"
+-'  2  10  ~/.gitignore
+|4,39,2,10,1579908842,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1579908808,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1579908808,"~/.gitignore"
 -'  2  10  ~/.git/.gitignore
 |4,39,2,10,1579908501,"~/.git/.gitignore"
 -'  2  10  ~/.git/.gitignore
 |4,39,2,10,1579908501,"~/.git/.gitignore"
+-'  2  10  ~/.git/.gitignore
+|4,39,2,10,1579908501,"~/.git/.gitignore"
+-'  2  10  ~/.git/.gitignore
+|4,39,2,10,1579908501,"~/.git/.gitignore"
+-'  1  0  ~/.git/.gitignore
+|4,39,1,0,1579908486,"~/.git/.gitignore"
+-'  1  0  ~/.git/.gitignore
+|4,39,1,0,1579908486,"~/.git/.gitignore"
 -'  1  0  ~/.git/.gitignore
 |4,39,1,0,1579908486,"~/.git/.gitignore"
 -'  1  0  ~/.git/.gitignore
@@ -96,6 +110,22 @@ $
 |4,39,21,7,1579908157,"~/.git"
 -'  21  7  ~/.git
 |4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
+-'  21  7  ~/.git
+|4,39,21,7,1579908157,"~/.git"
 -'  1  0  ~/.git
 |4,39,1,0,1579908149,"~/.git"
 -'  1  0  ~/.git
@@ -112,6 +142,38 @@ $
 |4,39,1,0,1579908149,"~/.git"
 -'  1  0  ~/.git
 |4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  1  0  ~/.git
+|4,39,1,0,1579908149,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1579908068,"~/.git"
 -'  8  0  ~/.git
 |4,39,8,0,1579908068,"~/.git"
 -'  8  0  ~/.git
@@ -192,76 +254,18 @@ $
 |4,39,17,60,1579907804,"~/Jenkinsfile"
 -'  17  60  ~/Jenkinsfile
 |4,39,17,60,1579907804,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  1  0  ~/Jenkinsfile
-|4,39,1,0,1579907697,"~/Jenkinsfile"
--'  18  22  ~/green/upload_docker.sh
-|4,39,18,22,1579907638,"~/green/upload_docker.sh"
--'  18  22  ~/green/upload_docker.sh
-|4,39,18,22,1579907638,"~/green/upload_docker.sh"
+-'  17  60  ~/Jenkinsfile
+|4,39,17,60,1579907804,"~/Jenkinsfile"
+-'  17  60  ~/Jenkinsfile
+|4,39,17,60,1579907804,"~/Jenkinsfile"
+-'  17  60  ~/Jenkinsfile
+|4,39,17,60,1579907804,"~/Jenkinsfile"
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/config
+	*	1579910970	0
+	"	1	0
 
 > ~/.gitignore
 	*	1579908841	0
@@ -276,10 +280,6 @@ $
 	^	2	11
 	.	2	10
 	+	2	10
-
-> ~/.git/config
-	*	1579908176	0
-	"	1	0
 
 > ~/Jenkinsfile
 	*	1579907803	0
