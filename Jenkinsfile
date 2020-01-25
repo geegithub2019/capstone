@@ -35,12 +35,13 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        sh 'kubectl apply -f ./green/deployment.yml '
+        sh 'kubectl version'
+        sh 'kubectl apply -f ./green/deployment.yml'
       }
     }
     stage('Kubernetes service') {
       steps{
-        sh 'kubectl apply -f ./green/service.yml '
+        sh 'kubectl apply -f ./green/service.yml'
       }
     }
   }
