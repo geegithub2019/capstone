@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mynginximagetest https://github.com/geegithub2019/capstone/tree/master/green'
+        sh 'docker build -t greenimage1 ./green/run_docker.sh '
       }
     }
     stage('Building image') {
