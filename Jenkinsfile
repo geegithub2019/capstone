@@ -35,7 +35,12 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        sh './green/run_kubernetes.sh '
+        sh 'kubectl apply -f ./green/deployment.yml '
+      }
+    }
+    stage('Kubernetes service') {
+      steps{
+        sh 'kubectl apply -f ./green/service.yml '
       }
     }
   }
