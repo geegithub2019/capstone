@@ -35,14 +35,8 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        #sh 'sudo -S kubectl version'
         sh './run_kubernetes.sh'
       }
     }
-#    stage('Kubernetes service') {
-#      steps{
-#        sh 'sudo -S kubectl apply -f ./green/service.yml'
-#      }
-#    }
   }
 }
