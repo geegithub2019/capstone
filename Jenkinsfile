@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t greenimage1 ./green/run_docker.sh '
+        sh './green/run_docker.sh '
       }
     }
     stage('Building image') {
