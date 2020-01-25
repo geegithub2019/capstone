@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mynginximagetest ./green'
+        sh 'docker build -t mynginximagetest https://github.com/geegithub2019/capstone/tree/master/green'
       }
     }
     stage('Building image') {
@@ -35,12 +35,12 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        sh "kubectl apply -f ./green/deployment.yml"
+        sh "kubectl apply -f https://github.com/geegithub2019/capstone/tree/master/green/deployment.yml"
       }
     }
     stage('Kubernetes service deploy') {
       steps{
-        sh "kubectl apply -f ./green/service.yml"
+        sh "kubectl apply -f https://github.com/geegithub2019/capstone/tree/master/green/service.yml"
       }
     }
   }
