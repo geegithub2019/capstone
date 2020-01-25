@@ -12,11 +12,6 @@ pipeline {
         sh 'docker build -t mynginximagetest ./green'
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'docker run --name mynginx5 -P -d mynginximagetest'
-      }
-    }
     stage('Building image') {
       steps{
         script {
@@ -36,6 +31,16 @@ pipeline {
     stage('Remove Unused docker image') {
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+    stage('Kubernetes deploy') {
+      steps{
+        sh "kubectl apply -f ./green/deployment.yml"
+      }
+    }
+    stage('Kubernetes deploy') {
+      steps{
+        sh "kubectl apply -f ./green/service.yml"
       }
     }
   }
