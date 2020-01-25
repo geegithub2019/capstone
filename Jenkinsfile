@@ -1,7 +1,7 @@
 pipeline {  
 
   environment {
-       registry = "geepee2017/dockercap"
+       registry = "geepee2017/greenimage"
        registryCredential = 'dockerhub'
        dockerImage = ''
   }
@@ -35,12 +35,7 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        sh "kubectl apply -f https://github.com/geegithub2019/capstone/tree/master/green/deployment.yml"
-      }
-    }
-    stage('Kubernetes service deploy') {
-      steps{
-        sh "kubectl apply -f https://github.com/geegithub2019/capstone/tree/master/green/service.yml"
+        sh "./green/run_kubernetes.sh"
       }
     }
   }
