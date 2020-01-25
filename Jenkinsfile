@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Kubernetes deploy') {
       steps{
-        sh "./green/run_kubernetes.sh"
+        sh './green/run_kubernetes.sh '
       }
     }
   }
