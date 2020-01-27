@@ -35,10 +35,8 @@ pipeline {
     }
     stage('Remote ssh') {
      steps{
-        withKubeConfig([credentialsId: 'jenkins', serverUrl: 'https://74B8E582A8CC04E5B2484C6ACC26E47B.yl4.us-west-2.eks.amazonaws.com']) {
         sh 'kubectl get nodes'
       }
     }
   }
- }
 }
