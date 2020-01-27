@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Remote ssh') {
      steps{
-        sh 'kubectl get nodes'
+        sh 'sudo -S kubectl get nodes'
       }
     }
   }
