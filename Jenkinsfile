@@ -33,9 +33,9 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('Kubernetes deploy') {
+    stage('Kubernetes deploy blue controller') {
       steps{
-        sh './run_kubernetes.sh'
+        sh 'kubectl apply -f ./blue/blue-controller.json'
       }
     }
   }
