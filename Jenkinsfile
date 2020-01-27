@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Remote ssh') {
      steps{
-        withKubeConfig([credentialsId: 'ubuntu', serverUrl: 'https://74B8E582A8CC04E5B2484C6ACC26E47B.yl4.us-west-2.eks.amazonaws.com']) {
+        withKubeConfig([credentialsId: 'iam-root-account@cluster4.us-west-2.eksctl.io', serverUrl: 'https://74B8E582A8CC04E5B2484C6ACC26E47B.yl4.us-west-2.eks.amazonaws.com']) {
         sh 'kubectl get nodes'
       }
     }
