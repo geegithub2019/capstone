@@ -33,11 +33,9 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('Kubernetes deploy blue controller') {
-      steps{
-        sshCommand(['kops-machine']) {
-          sh "ssh ec2-user@54.71.211.49 kubectl get pods"
-        }
+    stage('Remote ssh') {
+      withKubeConfig([credentialsId: 'ubuntu', serverUrl: 'https://74B8E582A8CC04E5B2484C6ACC26E47B.yl4.us-west-2.eks.amazonaws.com']) {
+        sh 'kubectl get nodes'
       }
     }
   }
