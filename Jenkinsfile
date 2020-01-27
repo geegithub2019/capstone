@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Kubernetes deploy blue controller') {
       steps{
-        sh 'kubectl apply -f ./blue/blue-controller.json'
+        sh 'kubectl get nodes'
       }
     }
   }
