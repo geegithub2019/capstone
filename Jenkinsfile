@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Kubernetes deploy blue controller') {
       steps{
-        ssh-agent(['kops-machine']) {
+        sshagent(['kops-machine']) {
           sh "ssh ec2-user@54.71.211.49 kubectl get pods"
         }
       }
