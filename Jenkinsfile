@@ -39,7 +39,7 @@ pipeline {
      steps{
         sh ''' 
              python3 -m venv venv
-             source venv/bin/activate
+             . $env_name/bin/activate
              kubectl get nodes
            '''
       }
