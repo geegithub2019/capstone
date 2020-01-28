@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Show command') {
      steps{
-        sh "aws eks --region us-west-2 update-kubeconfig --name cluster4"
+        sh "kubectl get nodes"
       }
     }
   }
