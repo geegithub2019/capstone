@@ -33,9 +33,9 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage('Remote ssh') {
+    stage('Show command') {
      steps{
-        sh 'sudo -S kubectl get nodes'
+        sh "kubectl get nodes"
       }
     }
   }
