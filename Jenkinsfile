@@ -33,9 +33,15 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
+    
+
     stage('Show command') {
      steps{
-        sh "kubectl get nodes"
+        sh ''' 
+             python3 -m venv venv
+             source venv/bin/activate
+             kubectl get nodes
+           '''
       }
     }
   }
