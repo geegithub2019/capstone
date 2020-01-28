@@ -37,11 +37,7 @@ pipeline {
 
     stage('Show command') {
      steps{
-        sh ''' 
-             python3 -m venv venv
-             . $env_name/bin/activate
-             kubectl get nodes
-           '''
+        sh "kubectl get nodes"
       }
     }
   }
