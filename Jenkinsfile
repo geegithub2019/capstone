@@ -38,7 +38,7 @@ pipeline {
     stage('Show command') {
       steps{
         container('kubectl') {  
-          sh "kubectl get nodes"
+          sh "kubectl get ns"
        }
       }
     }
