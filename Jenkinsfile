@@ -35,10 +35,12 @@ pipeline {
     }
     
 
-    stage('Show command') {
+    stage('Deploy to k8's') {
       steps{
-        container('kubectl') {  
-          sh "kubectl get ns"
+        sshagent(['kops-mackine']) {
+          script{
+            sh "ssh ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl get nodes"
+          }
        }
       }
     }
