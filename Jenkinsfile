@@ -35,7 +35,7 @@ pipeline {
     }
     
 
-    stage('Deploy to k8's') {
+    stage('Deploy to k8') {
       steps{
         sshagent(['kops-mackine']) {
           script{
