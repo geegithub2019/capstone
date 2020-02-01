@@ -41,7 +41,7 @@ pipeline {
           script{
             sh "ssh ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl get nodes"
           }
-       }
+        }
       }
     }
   }
