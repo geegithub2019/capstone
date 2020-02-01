@@ -39,7 +39,7 @@ pipeline {
       steps{
         sshagent(['kops-mackine']) {
           script{
-            sh "ssh ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl get nodes"
+            sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl get nodes"
           }
         }
       }
