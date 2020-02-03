@@ -40,7 +40,7 @@ pipeline {
         sshagent(['kops-mackine']) {
           script{
             dir('./green') {
-              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl create deployment greenimage --image=geepee2017/greenimage"
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl create deployment greenimage --image=geepee2017/greenimage:$BUILD_NUMBER"
               sh "pwd"
               sh "ls -al"
             }
