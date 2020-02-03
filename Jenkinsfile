@@ -41,6 +41,7 @@ pipeline {
           script{
             dir('./green') {
               sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl create deployment greenimage --image=geepee2017/greenimage"
+              sh "ls -al"
             }
           }
         }
