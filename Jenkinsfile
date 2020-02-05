@@ -9,9 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-         dir('./green/') {
-           sh './green/run_docker.sh '
-         } 
+        sh './green/run_docker.sh '
       }
     }
     stage('Building image') {
