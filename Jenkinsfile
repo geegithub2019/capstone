@@ -1,7 +1,7 @@
 pipeline {  
 
   environment {
-       registry = "geepee2017/greenimage"
+       registry = "geepee2017/blueimage"
        registryCredential = 'dockerhub'
        dockerImage = ''
   }
