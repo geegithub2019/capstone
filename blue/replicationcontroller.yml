@@ -1,0 +1,23 @@
+---
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: blueimage
+  labels:
+    app: blueimage 
+spec:
+  replicas: 3
+  selector:
+    app: blueimage
+  template:
+    metadata:
+      labels:
+        app: blueimage
+    spec:
+      containers:
+      - name: blueimage
+        image: geepee2017/blueimage:latest
+        ports:
+        - name: http-server
+          containerPort: 80
+
