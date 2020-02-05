@@ -8,15 +8,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+     dir('./green/') {
       steps {
         sh './green/run_docker.sh '
       }
+     }
     }
     stage('Building image') {
       steps{
         script {
+         dir('./green/') {
           dockerImage = docker.build registry + ":latest"
-        }
+         }
+        }   
       }
     }
     stage('Deploy Image') {
@@ -39,8 +43,8 @@ pipeline {
       steps{
         sshagent(['kops-mackine']) {
           script{
-            dir('./') {
-              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/replicationcontroller.yml"
+            dir('./green') {
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/green/replicationcontroller.yml"
             }
           }
         }
