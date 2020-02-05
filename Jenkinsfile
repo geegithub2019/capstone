@@ -8,18 +8,18 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-     dir('./green/') {
-      steps {
-        sh './green/run_docker.sh '
+      dir('./green/') {
+        steps {
+          sh './green/run_docker.sh '
+        } 
       }
-     }
     }
     stage('Building image') {
       steps{
         script {
-         dir('./green/') {
-          dockerImage = docker.build registry + ":latest"
-         }
+          dir('./green/') {
+            dockerImage = docker.build registry + ":latest"
+          }
         }   
       }
     }
