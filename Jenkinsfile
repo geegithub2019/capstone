@@ -15,7 +15,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":latest"
         }
       }
     }
@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi $registry:latest"
       }
     }
     
@@ -40,9 +40,8 @@ pipeline {
         sshagent(['kops-mackine']) {
           script{
             dir('./green') {
-              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl create deployment greenimage --image=geepee2017/greenimage:$BUILD_NUMBER"
-              sh "pwd"
-              sh "ls -al"
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f replicationcontroller.json"
+              sh "sudo kubectl apply -f nginx-service.json"
             }
           }
         }
