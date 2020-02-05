@@ -2,17 +2,17 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: nginx
+  name: greenimage
   labels:
-    app: nginx
+    app: greenimage
 spec:
   replicas: 3
   selector:
-    app: nginx
+    app: greenimage
   template:
     metadata:
       labels:
-        app: nginx
+        app: greenimage
     spec:
       containers:
       - name: nginx
