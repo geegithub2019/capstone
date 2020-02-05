@@ -8,10 +8,10 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      dir('./green/') {
-        steps {
-          sh './green/run_docker.sh '
-        } 
+      steps {
+         dir('./green/') {
+           sh './green/run_docker.sh '
+         } 
       }
     }
     stage('Building image') {
