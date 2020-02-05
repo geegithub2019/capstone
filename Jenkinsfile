@@ -41,7 +41,7 @@ pipeline {
           script{
             dir('./') {
               sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/replicationcontroller.yml"
-              sh "sudo kubectl apply -f $workspace/nginx-service.yml"
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/nginx-service.yml"
             }
           }
         }
