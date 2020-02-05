@@ -4,7 +4,7 @@
    "metadata":{
       "name":"nginx",
       "labels":{
-         "app":"nginx"
+         "app":"blueimage"
       }
    },
    "spec":{
@@ -15,7 +15,7 @@
          }
       ],
       "selector":{
-         "app":"nginx"
+         "app":"blueimage"
       },
       "type": "LoadBalancer"
    }
