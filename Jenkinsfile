@@ -35,16 +35,26 @@ pipeline {
     }
     
 
-    stage('Deploy to k8') {
+    stage('Deploy RC to k8') {
       steps{
         sshagent(['kops-mackine']) {
           script{
             dir('./') {
               sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/replicationcontroller.yml"
-              sh "sudo kubectl apply -f $workspace/nginx-service.json"
             }
           }
         }
+      }
+    }
+    stage('Deploy service to k8') {
+      steps{
+        sshagent(['kops-mackine']) {
+          script{ 
+            dir('./') {
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f $workspace/nginx-service.json"
+            }
+          } 
+        }  
       }
     }
   }
