@@ -39,9 +39,8 @@ pipeline {
       steps{
         sshagent(['kops-mackine']) {
           script{
-            dir('./green') {
-              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com sudo kubectl apply -f ./green/replicationcontroller.yml"
-              sh "sudo kubectl apply -f ./green/nginx-service.yml"
+            dir('./') {
+              sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-229-83-223.us-west-2.compute.amazonaws.com test.sh"
             }
           }
         }
