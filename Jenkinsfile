@@ -1,5 +1,5 @@
 // This is capstone project for blue-green kubernetes deployment
-pipeline("Blue green deployment" {  
+pipeline("Blue green deployment") {  
 //Dockerhub access info
   environment {
        registry = "geepee2017/blueimage"
