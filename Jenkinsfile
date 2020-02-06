@@ -1,3 +1,4 @@
+// This is capstone project for blue-green kubernetes deployment
 pipeline {  
 
   environment {
