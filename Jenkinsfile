@@ -7,14 +7,13 @@ pipeline {
        dockerImage = ''
   }
   agent any
-  options {
-        // we don't fill up our storage!
-        buildDiscarder(logRotator(numToKeepStr: '5'))
+ // options {
+        // Keeping max 4!
+   //     buildDiscarder(logRotator(numToKeepStr: '4'))
 
-        // And we'd really like to be sure that this build doesn't hang forever, so
-        // let's time it out after an hour.
-        timeout(time: 25, unit: 'MINUTES')
-    }
+        // time out set for 20 mins.
+     //   timeout(time: 20, unit: 'MINUTES')
+  //  }
 
   stages {
     stage('Compile') {
