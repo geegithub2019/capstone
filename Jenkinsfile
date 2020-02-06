@@ -7,13 +7,13 @@ pipeline {
        dockerImage = ''
   }
   agent any
- // options {
+  options {
         // Keeping max 4!
-   //     buildDiscarder(logRotator(numToKeepStr: '4'))
+        buildDiscarder(logRotator(numToKeepStr: '4'))
 
         // time out set for 20 mins.
-     //   timeout(time: 20, unit: 'MINUTES')
-  //  }
+        timeout(time: 20, unit: 'MINUTES')
+  }
 
   stages {
     stage('Compile') {
