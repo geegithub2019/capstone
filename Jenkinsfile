@@ -7,10 +7,6 @@ pipeline {
        dockerImage = ''
   }
   agent any
-  Node{
-    currentBuild.displayName = "Capstone"
-         currentBuild.description = "Blue green deployment"
-  }
   options {
         // we don't fill up our storage!
         buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -32,7 +28,7 @@ pipeline {
       steps{
         script {
           dir('./blue/') {
-            dockerImage = docker.build registry + ":latest"
+            dockerImage = docker.build registry + ":latest" 
           }
         }   
       }
