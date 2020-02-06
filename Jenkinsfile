@@ -1,3 +1,4 @@
+currentBuild.description = "Images for kube deployment"
 // This is capstone project for blue-green kubernetes deployment
 pipeline {  
 //Dockerhub access info
