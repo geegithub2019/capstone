@@ -7,16 +7,19 @@ pipeline {
        registryCredential = 'dockerhub'
        dockerImage = ''
   }
+  node {
+    currentBuild.displayName = "BlueGreen"
+    currentBuild.description = "BlueGreen"
+  }
   agent any
-//  options {
-        // For example, we'd like to make sure we only keep 10 builds at a time, so
+  options {
         // we don't fill up our storage!
-//        buildDiscarder(logRotator(numToKeepStr: '5'))
+        buildDiscarder(logRotator(numToKeepStr: '5'))
 
         // And we'd really like to be sure that this build doesn't hang forever, so
         // let's time it out after an hour.
-//        timeout(time: 25, unit: 'MINUTES')
-//    }
+        timeout(time: 25, unit: 'MINUTES')
+    }
 
   stages {
     stage('Compile') {
