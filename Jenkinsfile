@@ -1,7 +1,7 @@
 currentBuild.description = "Deployment for blue green enviroment"
 // This is capstone project for blue-green kubernetes deployment
 pipeline {  
-Dockerhub access info
+//Dockerhub access info
   environment {
        registry = "geepee2017/blueimage"
        registryCredential = 'dockerhub'
@@ -45,12 +45,12 @@ Dockerhub access info
         }
       }
     }
-    stage('Remove Unused docker image') {
+//    stage('Remove Unused docker image') {
 //Remove unused image from system
-      steps{
-        sh "docker rmi $registry:latest"
-      }
-    }
+//      steps{
+//        sh "docker rmi $registry:latest"
+//      }
+//    }
     
 
     stage('Deploy RC to k8') {
