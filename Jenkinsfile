@@ -1,5 +1,4 @@
-lint:ignore:JobDescriptionChecker
-currentBuild.description = "Images for kube deployment"
+currentBuild.description = "Deployment for blue green enviroment"
 // This is capstone project for blue-green kubernetes deployment
 pipeline {  
 //Dockerhub access info
