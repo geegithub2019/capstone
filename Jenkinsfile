@@ -7,6 +7,10 @@ pipeline {
        dockerImage = ''
   }
   agent any
+  Node{
+    currentBuild.displayName = "Capstone
+         currentBuild.description = "Blue green deployment"
+  }
   options {
         // we don't fill up our storage!
         buildDiscarder(logRotator(numToKeepStr: '5'))
