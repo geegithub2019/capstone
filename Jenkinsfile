@@ -8,15 +8,15 @@ pipeline {
        dockerImage = ''
   }
   agent any
-  options {
+//  options {
         // For example, we'd like to make sure we only keep 10 builds at a time, so
         // we don't fill up our storage!
-        buildDiscarder(logRotator(numToKeepStr: '5'))
+//        buildDiscarder(logRotator(numToKeepStr: '5'))
 
         // And we'd really like to be sure that this build doesn't hang forever, so
         // let's time it out after an hour.
-        timeout(time: 25, unit: 'MINUTES')
-    }
+//        timeout(time: 25, unit: 'MINUTES')
+//    }
 
   stages {
     stage('Compile') {
@@ -45,12 +45,12 @@ pipeline {
         }
       }
     }
-//    stage('Remove Unused docker image') {
+    stage('Remove Unused docker image') {
 //Remove unused image from system
-//      steps{
-//        sh "docker rmi $registry:latest"
-//      }
-//    }
+      steps{
+        sh "docker rmi $registry:latest"
+      }
+    }
     
 
     stage('Deploy RC to k8') {
