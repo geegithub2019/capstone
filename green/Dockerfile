@@ -1,4 +1,4 @@
 FROM nginx
 
 
-COPY index.html /usr/share/nginx/html
+COPY $workspace/green/index.html /usr/share/nginx/html
