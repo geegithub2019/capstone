@@ -8,7 +8,7 @@ pipeline {
   }
   agent any
   Node{
-    currentBuild.displayName = "Capstone
+    currentBuild.displayName = "Capstone"
          currentBuild.description = "Blue green deployment"
   }
   options {
