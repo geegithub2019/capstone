@@ -1,6 +1,6 @@
 currentBuild.description = "Deployment for blue green enviroment"
 // This is capstone project for blue-green kubernetes deployment
-pipeline {  
+pipeline("Blue green deployment" {  
 //Dockerhub access info
   environment {
        registry = "geepee2017/blueimage"
@@ -18,14 +18,6 @@ pipeline {
     }
 
   stages {
-    stage("Build"){
-      steps {
-        script {
-          env.currentBuild.displayName = "Capstone project."
-          env.currentBuild.description = "Blue green deployment."
-        }
-      }
-    }
     stage('Compile') {
 //Compile the docker image
       steps {
