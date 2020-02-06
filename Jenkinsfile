@@ -1,6 +1,6 @@
 // This is capstone project for blue-green kubernetes deployment
 pipeline {  
-
+//Dockerhub access info
   environment {
        registry = "geepee2017/blueimage"
        registryCredential = 'dockerhub'
@@ -18,12 +18,14 @@ pipeline {
     }
 
   stages {
-    stage('Build') {
+    stage('Compile') {
+//Compile the docker image
       steps {
         sh './blue/run_docker.sh '
       }
     }
     stage('Building image') {
+//Building the docker image for dockerhub
       steps{
         script {
           dir('./blue/') {
@@ -32,7 +34,8 @@ pipeline {
         }   
       }
     }
-    stage('Deploy Image') {
+    stage('Push Image to dockerhub') {
+//Pushing image to dockerhub
       steps{
          script {
             docker.withRegistry( '', registryCredential ) {
@@ -42,6 +45,7 @@ pipeline {
       }
     }
     stage('Remove Unused docker image') {
+//Remove unused image from system
       steps{
         sh "docker rmi $registry:latest"
       }
@@ -49,6 +53,7 @@ pipeline {
     
 
     stage('Deploy RC to k8') {
+//Deploy the docker image to kubernetes pods
       steps{
         sshagent(['kops-mackine']) {
           script{
@@ -60,6 +65,7 @@ pipeline {
       }
     }
     stage('Deploy service to k8') {
+//Deploy the service to access the kubernetes pod from the internet
       steps{
         sshagent(['kops-mackine']) {
           script{ 
