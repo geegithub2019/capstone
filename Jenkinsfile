@@ -1,4 +1,3 @@
-currentBuild.description = "Deployment for blue green enviroment"
 // This is capstone project for blue-green kubernetes deployment
 pipeline("Blue green deployment" {  
 //Dockerhub access info
