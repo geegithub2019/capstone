@@ -7,10 +7,6 @@ pipeline {
        registryCredential = 'dockerhub'
        dockerImage = ''
   }
-  node {
-    currentBuild.displayName = "BlueGreen"
-    currentBuild.description = "BlueGreen"
-  }
   agent any
   options {
         // we don't fill up our storage!
@@ -22,6 +18,14 @@ pipeline {
     }
 
   stages {
+    stage("Build"){
+      steps {
+        script {
+          env.currentBuild.displayName = "Capstone project."
+          env.currentBuild.description = "Blue green deployment."
+        }
+      }
+    }
     stage('Compile') {
 //Compile the docker image
       steps {
