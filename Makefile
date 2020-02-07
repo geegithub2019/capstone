@@ -19,7 +19,6 @@ test:
 	# Additional, optional, tests could go here
 	#python -m pytest -vv --cov=myrepolib tests/*.py
 	#python -m pytest --nbval notebook.ipynb
-        curl http://127.0.0.1:80
 
 lint:
 	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
