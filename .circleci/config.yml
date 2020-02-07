@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
 # Use the same Docker base as the project
-      - image: nginx
+            - image: nginx:1.17.8
 
     working_directory: ~/capstone
 
